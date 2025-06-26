@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #0ea5e9;
+  --secondary-color: #8b5cf6;
+  --accent-color: #f97316;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply m-0 p-0 font-poppins text-gray-800 overflow-x-hidden;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-md font-medium transition-all duration-300 inline-block text-center;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white hover:bg-gray-100 text-primary-600 border border-primary-600 rounded-md font-medium transition-all duration-300 inline-block text-center;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-12 max-w-3xl mx-auto text-center;
+  }
+  
+  .service-card {
+    @apply bg-white p-6 rounded-lg shadow-custom transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .price-card {
+    @apply bg-white p-8 rounded-lg shadow-custom border border-gray-100 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .testimonial-card {
+    @apply bg-white p-6 rounded-lg shadow-custom mx-4;
+  }
+}
+
+/* Navbar styles */
+.nav-link {
+  @apply relative font-medium text-gray-800 hover:text-primary-600 transition-colors duration-300;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute w-0 h-0.5 bg-primary-600 left-0 -bottom-1 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.nav-link.active::after {
+  @apply w-full;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  @apply cursor-pointer w-6 h-6 relative;
+}
+
+.hamburger span {
+  @apply block absolute h-0.5 w-full bg-gray-800 rounded transition-all duration-300;
+}
+
+.hamburger span:nth-child(1) {
+  @apply top-0;
+}
+
+.hamburger span:nth-child(2) {
+  @apply top-2;
+}
+
+.hamburger span:nth-child(3) {
+  @apply top-4;
+}
+
+.hamburger.active span:nth-child(1) {
+  @apply top-2 rotate-45;
+}
+
+.hamburger.active span:nth-child(2) {
+  @apply opacity-0;
+}
+
+.hamburger.active span:nth-child(3) {
+  @apply top-2 -rotate-45;
+}
+
+
+
+
+
+/* ...existing code... */
+.navbar {
+  position: relative;
+  z-index: 3;
+  /* ...existing code... */
+}
+
+.offers {
+  position: relative;
+  z-index: 2;
+  /* Optional: add margin or padding as needed */
+  margin-bottom: 0;
+}
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.offerbanner {
+  position: relative;
+  z-index: 2;
+  background: #ffeeba;
+  padding: 16px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.offerbanner-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.offerbanner-img {
+  max-width: 100%;
+  height: auto;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slide {
+  min-width: 100%;
+  display: none;
+}
+.slide.active {
+  display: block;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0 12px;
+  cursor: pointer;
+  z-index: 2;
+}
+.slider-btn.prev {
+  left: 10px;
+}
+.slider-btn.next {
+  right: 10px;
+}
+
+.awards {
+  background: #f8f9fa;
+  padding: 40px 0;
+  text-align: center;
+}
+.awards h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+.awards-list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.award-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 16px 24px;
+  max-width: 180px;
+}
+.award-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+.award-item p {
+  font-size: 1rem;
+  margin: 0;
+}
